@@ -9,7 +9,10 @@ class HelpAndGuid extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'description',
+        'user_id'
+    ];
 
     public function user()
     {

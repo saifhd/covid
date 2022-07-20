@@ -18,6 +18,7 @@ class HelpAndGuidController extends Controller
         $contributors = User::select('id','name','email')
             ->withCount('help_and_guids')
             ->having('help_and_guids_count','>',0)
+            ->orderByDesc('help_and_guids_count')
             ->get();
 
         return view('helpAndGuid.index',[

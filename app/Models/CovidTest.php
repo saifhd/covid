@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CovidTest extends Model
 {
     use HasFactory;
-    
-    protected $guarded = [];
+
+    protected $fillable = [
+        'date',
+        'pcr_count',
+        'antigen_count'
+    ];
 }
