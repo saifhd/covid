@@ -78,7 +78,9 @@
                                                     email@windster.com
                                                 </p>
                                             </div>
-                                            <span class="text-xs text-bold bg-green-500 text-white px-2 py-1 rounded">{{ $contributor->help_and_guids_count }} Posts</span>
+                                            <span class="text-xs text-bold bg-green-500 text-white px-2 py-1 rounded">{{ $contributor->help_and_guids_count }}
+                                                {{ $contributor->help_and_guids_count == 1 ? 'Post' : 'Posts' }}
+                                            </span>
                                         </div>
                                     </li>
 

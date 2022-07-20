@@ -4,13 +4,6 @@ use App\Http\Controllers\CovidController;
 use App\Http\Controllers\HelpAndGuidController;
 use Illuminate\Support\Facades\Route;
 
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-
 Route::get('/', CovidController::class)->name('covid.index');
 
 Route::controller(HelpAndGuidController::class)
