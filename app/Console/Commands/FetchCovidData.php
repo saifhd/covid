@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Jobs\FetchAndStoreCovidDataJob;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class FetchCovidData extends Command
 {
@@ -38,6 +39,8 @@ class FetchCovidData extends Command
      */
     public function handle()
     {
+        Log::info('start');
         FetchAndStoreCovidDataJob::dispatch();
+        Log::info('end');
     }
 }
