@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('covid.index')" :active="request()->routeIs('covid.index')">
                         {{ __('Covid Cases') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('help-and-guid.index')" :active="request()->routeIs('help-and-guid.index')">
+                        {{ __('Help&Guid') }}
+                    </x-nav-link>
                 </div>
             </div>
 

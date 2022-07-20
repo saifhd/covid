@@ -1,22 +1,10 @@
 <?php
 
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\HelpAndGuidController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,4 +12,12 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', CovidController::class)->name('covid.index');
+
+Route::controller(HelpAndGuidController::class)
+    ->prefix('help-and-guids')
+    ->group(function(){
+        Route::get('/','index')->name('help-and-guid.index');
+        Route::post('/','store')->middleware('auth')->name('help-and-guid.store');
+    });
+
 require __DIR__.'/auth.php';
