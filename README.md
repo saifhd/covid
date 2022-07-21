@@ -13,6 +13,8 @@
 - php artisan key:generate
 
 ## (.env) file updates
+- Copy .env.example and create .env file or simply run cp .env.example .env
+- Update valid data fetch url for COVID_API_URL=https://hpb.health.gov.lk/api/get-current-statistical
 - Create Database Connection
 
 ## Commands
